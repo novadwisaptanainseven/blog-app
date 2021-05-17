@@ -1,0 +1,212 @@
+body {
+    font-family: "Rubik", sans-serif;
+    color: #343434;
+}
+
+.navbar {
+    padding-left: 50px;
+    padding-right: 50px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    transition: 0.3s;
+    background-color: white;
+}
+
+.navbar2 {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    position: relative;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    transition: 0.3s;
+    background-color: white;
+}
+
+.my-text-muted {
+    color: #afafaf;
+}
+
+h2 .my-text-muted:hover {
+    color: #afafaf;
+}
+
+.sticky {
+    background-color: #343434;
+    color: white;
+}
+
+.sticky ul.navbar-link a.active {
+    color: white;
+}
+
+.sticky ul.navbar-link a:hover {
+    color: white;
+}
+
+ul.navbar-link {
+    display: flex;
+    width: 50%;
+    transition: 0.3s;
+}
+.link {
+    text-decoration: none;
+    color: #b6b6b6;
+    cursor: pointer;
+}
+.link.active {
+    text-decoration: none;
+    color: #343434;
+}
+.link:hover {
+    text-decoration: none;
+    color: #343434;
+}
+.toggle-button {
+    position: absolute;
+    top: 1.3rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #343434;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.sticky .toggle-button .bar {
+    background-color: white;
+}
+
+.line1,
+.line2 {
+    width: 150px;
+    height: 3px;
+    background-color: #343434;
+}
+
+.categories {
+    font-size: 18px;
+}
+.categories li {
+    cursor: pointer;
+    padding-bottom: 8px;
+}
+.categories li.active {
+    border-bottom: 3px solid rgb(166, 20, 185);
+    padding-bottom: 5px;
+}
+.categories li:hover {
+    border-bottom: 3px solid rgb(166, 20, 185);
+    padding-bottom: 5px;
+}
+
+.blogs-heading,
+.about-description,
+.contact-content {
+    font-family: "Roboto Slab", serif;
+}
+
+.my-box-shadow {
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.my-text-shadow {
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.contact-list li {
+    margin-bottom: 10px;
+}
+
+.footer {
+    background-color: #343434;
+    padding: 60px 0px;
+}
+.footer ul li {
+    font-size: 18px;
+    font-family: "Roboto Slab", serif;
+    margin-bottom: 12px;
+}
+.footer ul li a {
+    color: #ccc;
+    text-decoration: none;
+}
+.footer ul li a:hover {
+    color: white;
+}
+
+/* Media Queries For Responsive */
+/* Mobile Devices */
+@media (max-width: 600px) {
+    .toggle-button {
+        display: flex;
+    }
+
+    ul.navbar-link {
+        /* display: none; */
+        position: relative;
+        height: 0;
+        top: -500px;
+        width: 100%;
+        flex-direction: column;
+        overflow: hidden;
+        transition: 0.5s;
+    }
+
+    ul.navbar-link.active {
+        top: 0;
+        height: auto;
+    }
+
+    ul.navbar-link li {
+        padding: 10px 0;
+    }
+
+    .navbar {
+        padding-left: 10px;
+        padding-right: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar2 {
+        padding-left: 10px;
+        padding-right: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toggle-button .bar:nth-child(1).active {
+        transform: rotate(45deg) translate(2px, 5px);
+    }
+    .toggle-button .bar:nth-child(2).active {
+        transform: scale(0);
+    }
+    .toggle-button .bar:nth-child(3).active {
+        transform: rotate(-45deg) translate(7px, -12px);
+    }
+
+    .category-name {
+        display: none;
+    }
+
+    .footer {
+        text-align: center;
+    }
+
+    .footer ul li.list-contact-us {
+        flex-direction: column;
+    }
+    .footer ul li.list-contact-us .icon {
+        margin: auto;
+        margin-bottom: 10px;
+    }
+}

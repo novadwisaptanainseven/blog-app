@@ -1,0 +1,14 @@
+/* * {
+    box-sizing: border-box;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+} */
+
+body {
+    font-family: "Rubik", sans-serif;
+}
