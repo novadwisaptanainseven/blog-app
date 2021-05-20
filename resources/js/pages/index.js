@@ -9,6 +9,7 @@ const Index = () => {
         <Router>
             <Switch>
                 <Route exact path="/" component={Home} />
+                <Route exact path="/:section" component={Home} />
                 <Route exact path="/detail-blog/:id" component={DetailBlog} />
             </Switch>
         </Router>

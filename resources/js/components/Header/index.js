@@ -1,9 +1,28 @@
 import React, { useEffect, useRef } from "react";
+import { useRouteMatch } from "react-router";
 import { Link, animateScroll as scroll } from "react-scroll";
 
 const Header = () => {
     const barToggleButton = useRef();
     const navbarLink = useRef();
+    const match = useRouteMatch();
+    const { params } = match;
+
+    useEffect(() => {
+        switch (params.section) {
+            case "blogs":
+                scroll.scrollTo(600);
+                break;
+            case "about":
+                scroll.scrollTo(1480);
+                break;
+            case "contact":
+                scroll.scrollTo(1980);
+                break;
+            default:
+                break;
+        }
+    }, [params]);
 
     useEffect(() => {
         barToggleButton.current = document.querySelectorAll(

@@ -12678,7 +12678,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-scroll */ "./node_modules/react-scroll/modules/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -12733,46 +12735,27 @@ var HeaderDetail = function HeaderDetail() {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("ul", {
         className: "navbar-link list-unstyled align-items-center m-0 justify-content-around",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_scroll__WEBPACK_IMPORTED_MODULE_1__.Link, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+            to: "/home",
             className: "link",
-            activeClass: "active",
-            to: "section-home",
-            spy: true,
-            smooth: true,
-            duration: 800,
             children: "Home"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_scroll__WEBPACK_IMPORTED_MODULE_1__.Link, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+            to: "/blogs",
             className: "link",
-            activeClass: "active",
-            to: "section-blogs",
-            spy: true,
-            smooth: true,
-            offset: -100,
-            duration: 800,
             children: "Blogs"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_scroll__WEBPACK_IMPORTED_MODULE_1__.Link, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+            to: "/about",
             className: "link",
-            activeClass: "active",
-            to: "section-about",
-            spy: true,
-            smooth: true,
-            offset: -60,
-            duration: 800,
             children: "About"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_scroll__WEBPACK_IMPORTED_MODULE_1__.Link, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+            to: "/contact",
             className: "link",
-            activeClass: "active",
-            to: "section-contact",
-            spy: true,
-            smooth: true,
-            offset: -60,
-            duration: 800,
             children: "Contact"
           })
         })]
@@ -12797,8 +12780,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var react_scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-scroll */ "./node_modules/react-scroll/modules/index.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -12808,6 +12793,26 @@ __webpack_require__.r(__webpack_exports__);
 var Header = function Header() {
   var barToggleButton = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
   var navbarLink = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  var match = (0,react_router__WEBPACK_IMPORTED_MODULE_3__.useRouteMatch)();
+  var params = match.params;
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    switch (params.section) {
+      case "blogs":
+        react_scroll__WEBPACK_IMPORTED_MODULE_1__.animateScroll.scrollTo(600);
+        break;
+
+      case "about":
+        react_scroll__WEBPACK_IMPORTED_MODULE_1__.animateScroll.scrollTo(1480);
+        break;
+
+      case "contact":
+        react_scroll__WEBPACK_IMPORTED_MODULE_1__.animateScroll.scrollTo(1980);
+        break;
+
+      default:
+        break;
+    }
+  }, [params]);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     barToggleButton.current = document.querySelectorAll(".toggle-button .bar");
     navbarLink.current = document.querySelector(".navbar-link");
@@ -13331,6 +13336,10 @@ var Index = function Index() {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
         exact: true,
         path: "/",
+        component: _Home__WEBPACK_IMPORTED_MODULE_3__.default
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
+        exact: true,
+        path: "/:section",
         component: _Home__WEBPACK_IMPORTED_MODULE_3__.default
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
         exact: true,

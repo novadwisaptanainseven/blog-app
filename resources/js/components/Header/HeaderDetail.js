@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { animateScroll as scroll } from "react-scroll";
+import { Link } from "react-router-dom";
 
 const HeaderDetail = () => {
     const barToggleButton = useRef();
@@ -46,53 +47,22 @@ const HeaderDetail = () => {
                 </a>
                 <ul className="navbar-link list-unstyled align-items-center m-0 justify-content-around">
                     <li>
-                        <Link
-                            className="link"
-                            activeClass="active"
-                            to="section-home"
-                            spy={true}
-                            smooth={true}
-                            duration={800}
-                        >
+                        <Link to="/home" className="link">
                             Home
                         </Link>
                     </li>
                     <li>
-                        <Link
-                            className="link"
-                            activeClass="active"
-                            to="section-blogs"
-                            spy={true}
-                            smooth={true}
-                            offset={-100}
-                            duration={800}
-                        >
+                        <Link to="/blogs" className="link">
                             Blogs
                         </Link>
                     </li>
                     <li>
-                        <Link
-                            className="link"
-                            activeClass="active"
-                            to="section-about"
-                            spy={true}
-                            smooth={true}
-                            offset={-60}
-                            duration={800}
-                        >
+                        <Link to="/about" className="link">
                             About
                         </Link>
                     </li>
                     <li>
-                        <Link
-                            className="link"
-                            activeClass="active"
-                            to="section-contact"
-                            spy={true}
-                            smooth={true}
-                            offset={-60}
-                            duration={800}
-                        >
+                        <Link to="/contact" className="link">
                             Contact
                         </Link>
                     </li>
