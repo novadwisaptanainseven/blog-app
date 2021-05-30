@@ -1,0 +1,17 @@
+1. Level user ada 2, yaitu;
+  - Administrator (1)
+  - Writer (2)
+
+2. Hak Akses
+  - Administrator
+    -> Melihat semua penulis postingan blog (Read)
+    -> Setting halaman front end (About & Contact)
+    -> Setting profil admin
+    -> Dashboard admin
+       -> Jumlah total postingan blog writer
+       -> Jumlah total writers
+  - Writer
+    -> Membuat postingan blog (CRUD)
+    -> Setting profile writer
+    -> Dashboard writer
+       -> Jumlah postingan blog writer
